@@ -19,9 +19,12 @@ bool IsEqual(const char str1[], const char str2[])
         if(str1[i] != str2[i]){
             return false;
         }
+        // 문자열 종료 조건
+        if(str1[i] == '\0')
+            return true;
     }
     // 힌트: ==, != 같지 않다 비교 연산자
-    // 힌트: 문자열 종료 조건
+       
     // 디버깅 힌트: 문자를 정수로 바꿔서 출력해보기
     return true;
 }
@@ -30,13 +33,12 @@ int main()
 {
     // 영어 사용이 디버깅에 유리합니다.
     const char str1[kMaxStr] = "stop";
-    char str2[kMaxStr] = {};
-    
    
-    
     while (1)
     {
+        char str2[kMaxStr];
         cin >> str2;
+        
         if(IsEqual(str1,str2))
         {
             break;
